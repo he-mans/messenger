@@ -1,0 +1,187 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+#AuthRoot{
+    background-image:url(./images/background.png);
+    background-size: 100% 100%;
+    backgroud-repeat: no-repeat;
+    height: 125vh;
+    width: 100%;
+    
+
+    display: grid;
+	grid-template-columns: minmax(1fr, 1.35fr) minmax(1fr, 1.35fr);
+	grid-template-rows: 8% 25% 80%;
+	grid-template-areas: 
+	"navigationBar navigationBar"
+	"title title"
+	"login signup";
+}
+
+
+/*.join div{
+	height: 50px;
+	width: 180px;
+	background-color: #ffffff;
+	cursor: pointer;
+
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-item: center;
+	
+	border-radius: 7px 7px 7px 7px;
+	box-shadow: 10px 10px 50px #000000;
+
+	transition: all .15s ease-in-out 0s;
+}
+
+#content_login{
+	background-color: #ffffff;
+}
+
+#content_signup{
+	background-color: #668cff;
+}
+
+.join div:hover{
+	height: 60px;
+	width: 190px;
+}
+
+.join h4{
+	text-align:center;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 15px;
+	letter-spacing:1px;
+	padding-bottom:3px;
+	padding-top: 3px;
+}
+
+.join p{
+	text-align:center;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 13px;
+	padding-top: 2px;
+}
+
+
+.join{
+	padding-top: 20px;
+	height: 80vh;
+	display: flex;
+	align-items: top;
+}
+
+#login{
+	grid-area: login;
+	justify-content: flex-end;
+	padding-right: 30px;
+}
+
+#signup{
+	grid-area: signup;
+	justify-content: flex-start;
+	padding-left: 30px;
+}
+
+#navBar{
+	padding-top: 8px;
+	padding-left:5px;
+	padding-right:5px;
+	grid-area:navigationBar;
+	display:grid;
+	grid-template-areas:
+	"navigation navigation_";
+}
+
+nav{
+	transition: all .4s ease-out 0s;
+}
+
+#nav1{
+	grid-area:navigation;
+}
+
+#nav2{
+	gird-area:navigation_;
+}
+
+nav ul{
+	display:flex;
+	list-style:none;
+}
+
+#nav1 ul{
+	flex-flow: row wrap;
+}
+
+#nav2 ul{
+	flex-flow: row-reverse wrap;
+	margin-right:20px;
+}
+
+nav ul li{
+	text-decoration: none;
+	font-size: 17px;
+	font-family: 'Saira Extra Condensed', sans-serif;
+	letter-spacing: 1px;
+	align-self: center;
+}
+
+#nav1 ul li{
+	padding: 20px 8px 20px 10px;
+}
+
+#nav2 ul li{
+	padding: 16px 8px 0px 5px;
+}
+
+nav ul li a{
+	color: white;
+	text-decoration:none;
+}
+
+#nav1 ul li img{
+	height:30px;
+	width: 30px;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+#nav2 ul li img{
+	height: 25px;
+	width: 25px;
+	padding : 10px 5px 5px 0px;
+	margin-top:3px;
+}
+
+
+
+#title{
+	grid-area: title;
+	flex-flow: column,wrap;
+	justify-content:center;
+	align-items: center;
+	padding-top: 70px;
+	height: 20vh;
+}
+
+#title h1{
+	text-align: center;
+	color:white;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 60px;
+	letter-spacing: 3px;
+}
+
+#title p{
+	padding-top:10px;
+	text-align: center;
+	color: #5b5759;
+	font-family: 'Saira Extra Condensed', sans-serif;
+	font-size: 20px;
+}
+*/

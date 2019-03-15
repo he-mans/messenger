@@ -1,0 +1,56 @@
+#title{
+	grid-area: title;
+	flex-flow: column,wrap;
+	justify-content:center;
+	align-items: center;
+	padding-top: 70px;
+	height: 20vh;
+}
+
+#title h1{
+	text-align: center;
+	color:white;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 60px;
+	letter-spacing: 3px;
+}
+
+#title p{
+	padding-top:10px;
+	text-align: center;
+	color: #5b5759;
+	font-family: 'Saira Extra Condensed', sans-serif;
+	font-size: 20px;
+}
+
+@media only screen and (max-width: 425px){
+	#title h1{
+		font-size: 45px;
+	}
+
+	#title p{
+		font-size:20px;
+	}
+}
+
+
+@media only screen and (min-height: 1366px){
+	#title h1{
+		font-size: 70px;
+	}
+
+	#title p{
+		font-size:30px;
+	}
+}
+
+
+@media only screen and (min-height: 1366px){
+	#title h1{
+		font-size: 70px;
+	}
+
+	#title p{
+		font-size:30px;
+	}
+}

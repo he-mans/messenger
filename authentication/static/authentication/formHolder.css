@@ -1,0 +1,13 @@
+#AuthRoot{
+	/* background-image:url(./images/formBackground.jpg); */
+}
+
+#formHolder{
+	height: 90vh;
+	justify-content:center;
+	display:flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+	padding-top:70px;
+	align-items: center;
+}

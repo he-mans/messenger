@@ -1,0 +1,34 @@
+{% extends "authentication/base.html" %}
+
+{% load static %}
+
+{% block addCss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'authentication/Btn.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'authentication/Title.css' %}">
+{% endblock addCss %}
+
+{% block title %}
+	chats
+{% endblock title %}
+	
+{% block body %}
+	
+			<div id="title">
+				<h1>chatting django</h1>
+				<p>A Responsive Chat Web App made using Django framework<p>
+			</div>
+
+	<div class = "join" id="login">
+				<div id="content_login" onclick="expand_join_div('content_login')">
+					<h4>login</h4>
+					<p>your friends are waiting</p>
+				</div>
+			</div>
+			
+			<div class = "join" id="signup">
+				<div id="content_signup" onclick="expand_join_div('content_signup')">
+					<h4>signup</h4>
+					<p>and join your friends</p>
+				</div>
+			</div>
+{% endblock body %}

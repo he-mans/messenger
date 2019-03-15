@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed|Yanone+Kaffeesatz" rel="stylesheet">
+    
+    <link rel="stylesheet" type = "text/css" href="{% static 'authentication/Auth.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'authentication/NavBar.css' %}">
+
+    {% block addCss %}{% endblock addCss %}
+    
+    <title>{% block title %}{% endblock title %}</title>
+  </head>
+  
+  <body>
+    <div id="AuthRoot">
+        
+      <div id="navBar">
+          <nav id="nav1">
+            <ul>
+              <li><a href="{% url 'auth-home' %}"><img src = "{% static 'authentication/images/logo.png' %}" alt="chatting_django"></a></li>
+              <li><a href="#">Developer</a></li>
+              <li><a href="#">About me</a></li>
+            </ul>
+          </nav>
+
+          <nav id="nav2">
+            <ul>
+              <li><a href="#"><img src = "{% static 'authentication/images/instagram_link.png' %}" alt="instagram"></a></li>
+              <li><a href="#"><img src = "{% static 'authentication/images/github_link.png' %} " alt="github"></a></li>
+              <li><a>follow me</a></li>
+            </ul>
+          </nav>
+      </div>
+
+      {% block body %}{% endblock body %}
+        
+    </div>
+      
+  </body>
+</html>
