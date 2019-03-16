@@ -1,0 +1,18 @@
+{% extends "authentication/formHolder.html" %}
+{% load static %}	
+
+{% block addCssForm %}
+	<link rel="stylesheet" type="text/css" href="{% static 'authentication/form.css' %}">
+{% endblock addCssForm %}
+
+{% block form %}
+	<form id="form" method="post">
+		<div id="greeting">
+			<h2>Welcome aboard!</h2>
+			<p>We are Excited to have you here</p>
+		</div>
+		{% csrf_token %}
+		{{ form }}
+		<button type="submit">Signup</button>
+	</form>
+{% endblock form %}

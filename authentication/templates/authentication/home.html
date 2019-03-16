@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block addCss %}
+	<link rel="stylesheet" type = "text/css" href="{% static 'authentication/home.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'authentication/Btn.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'authentication/Title.css' %}">
 {% endblock addCss %}
@@ -19,16 +20,20 @@
 			</div>
 
 	<div class = "join" id="login">
-				<div id="content_login" onclick="expand_join_div('content_login')">
-					<h4>login</h4>
-					<p>your friends are waiting</p>
-				</div>
-			</div>
+		<div id="content_login" onclick="expand_join_div('content_login')">
+			<a href="{% url 'auth-login' %}">
+			<h4>login</h4>
+			<p>your friends are waiting</p>
+			</a>
+		</div>
+	</div>
 			
-			<div class = "join" id="signup">
-				<div id="content_signup" onclick="expand_join_div('content_signup')">
-					<h4>signup</h4>
-					<p>and join your friends</p>
-				</div>
-			</div>
+	<div class = "join" id="signup">
+		<div id="content_signup" onclick="expand_join_div('content_signup')">
+			<a href="{% url 'auth-signup' %}">
+			<h4>signup</h4>
+			<p>and join your friends</p>
+			</a>
+		</div>
+	</div>
 {% endblock body %}

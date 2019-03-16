@@ -1,0 +1,12 @@
+
+#AuthRoot{
+   	background-image:url(./images/background.png);
+
+   	display: grid;
+	grid-template-columns: minmax(1fr, 1.35fr) minmax(1fr, 1.35fr);
+	grid-template-rows: 8% 25% 80%;
+	grid-template-areas: 
+	"navigationBar navigationBar"
+	"title title"
+	"login signup";
+}

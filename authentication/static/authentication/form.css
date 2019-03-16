@@ -1,0 +1,114 @@
+#form{
+	height: 390px;
+	width: 440px;
+	display:flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items:center;
+	background-color: rgb(40, 40, 40);
+	border-radius: 7px;
+	box-shadow: 10px 10px 70px #000;
+	transition: all .15s ease-in-out 0s;
+}
+
+#form:hover{
+	height:405px;
+	width: 445px;
+}
+
+#form input[type=text]{
+	width:300px;
+	height:25px;
+	padding: 5px;
+	font-family:'Yanone Kaffeesatz', sans-serif;;
+	font-size: 16px;
+	letter-spacing: .3px;
+	border-radius: 6px 6px 6px 6px;
+	border-width: 1px;
+	border-color:black;
+	padding-left:7px;
+	margin-bottom:10px;
+}
+
+#form input[type=email]{
+	width:300px;
+	height:25px;
+	padding: 5px;
+	font-family:'Yanone Kaffeesatz', sans-serif;;
+	font-size: 16px;
+	letter-spacing: .3px;
+	border-radius: 6px 6px 6px 6px;
+	border-width: 1px;
+	border-color:black;
+	padding-left:7px;
+	margin-bottom:10px;
+}
+
+#form input[type=password]{
+	width:300px;
+	height:25px;
+	padding: 5px;
+	padding-left:7px;
+	font-family:'Yanone Kaffeesatz', sans-serif;;
+	font-size: 16px;
+	letter-spacing: .4px;	
+	border-radius: 6px 6px 6px 6px;
+	border-width: 1px;
+	border-color:black;
+	margin-bottom:10px;
+}
+#form button{
+	height:35px;
+	width:312px;
+	padding: 5px;
+	padding-left:7px;
+	font-family:'Yanone Kaffeesatz', sans-serif;;
+	font-size: 16px;
+	letter-spacing: .4px;	
+	border-radius: 6px 6px 6px 6px;
+	border-width: 0px;
+	background-color: #668cff;
+	transition: all .2s ease-in-out 0s;
+	cursor:pointer;
+}
+
+#form button:hover{
+	background-color: #92b3e8;
+}
+
+#greeting h2{
+	color:white;
+	font-family:'Yanone Kaffeesatz', sans-serif;
+	font-size: 40px;
+	padding-bottom: 10px;
+	letter-spacing: .6px;
+}
+
+#greeting p{
+	color:white;
+	font-family:'Yanone Kaffeesatz', sans-serif;
+	font-size:20px;
+	padding-bottom:30px;
+	margin-left:14px;
+}
+
+#form .errorlist{
+	position:absolute;
+	top:90px;
+	color: #721c24;
+    background-color: rgba(239, 234, 235,.5);
+	width:430px;
+	border-radius:7px;
+	color:rgb(38, 38, 38);
+	pointer-events:none;
+	font-family:'Yanone Kaffeesatz', sans-serif;
+	padding: 5px;
+}
+
+#form .errorlist li{
+	list-style-type: none;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:5px;
+	padding-right:5px;
+}

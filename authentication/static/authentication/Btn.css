@@ -5,6 +5,11 @@
 	align-items: top;
 }
 
+a{
+	text-decoration: none;
+	color:black;
+}
+
 #login{
 	grid-area: login;
 	justify-content: flex-end;
