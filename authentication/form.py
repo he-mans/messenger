@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LoginView
 
 
 class signupForm(UserCreationForm):
@@ -31,16 +32,12 @@ class signupForm(UserCreationForm):
 				"placeholder":"username"
 			})
 
-class loginForm(forms.ModelForm):
-	password=forms.CharField(widget=forms.PasswordInput,label='')
+class loginForm(forms.Form):
 	username=forms.CharField(label='')
+	password=forms.CharField(widget=forms.PasswordInput,label='')
 
-	class Meta:
-		model=User
-		fields=['username','password']
-
-	def __init__(self,*args,**kwargs):
-		super(loginForm,self).__init__(*args, **kwargs)
+	def __init__(self,request,*args,**kwargs):
+		super(forms.Form,self).__init__(*args, **kwargs)
 		self.fields['username'].widget.attrs.update({
 				"placeholder":"username"
 			})
