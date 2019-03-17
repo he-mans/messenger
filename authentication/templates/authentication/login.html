@@ -6,7 +6,15 @@
 {% endblock addCssForm %}
 
 {% block form %}
+	
 	<form id="form" method="post">
+		{% if messages %}
+			<ul class='errorlist'>
+				{% for message in messages %}
+					<li>{{ message }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
 		<div id="greeting">
 			<h2>Welcome back!</h2>
 			<p>Your friends are waiting!!</p>
