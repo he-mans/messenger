@@ -45,6 +45,15 @@
 	justify-content: flex-end;
 }
 
+#form .errorlist{
+	list-style:none;
+	background-color:rgba(234, 58, 58,.94);
+	border-radius:5px;
+	padding:6px 6px 6px 6px;
+	font-family:Yanone Kaffeesatz; 
+	color:rgb(20, 20, 20);
+}	
+
 #form input{
 	
 	padding: 7px 0 7px 5px;
@@ -79,10 +88,11 @@
 
 #labelHolder{
 	padding-top:13px;
+	width:90px;
 }
 
-label{
-	width:90px;
+#labelHolder label{
+	width: 40px;
 }
 
 #customFileButton{

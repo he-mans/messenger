@@ -5,14 +5,25 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'authentication/form.css' %}">
 {% endblock addCssForm %}
 
+{% block addScript %}
+	<script >
+		$(document).ready(function(){
+			let list1 = $(".errorlist").first()
+			$(".errorlist").last().append(list1.children("li"))
+		})
+	</script>
+{% endblock addScript %}
+
 {% block form %}
-	<form id="form" method="post">
-		<div id="greeting">
-			<h2>Welcome aboard!</h2>
-			<p>We are Excited to have you here</p>
-		</div>
-		{% csrf_token %}
-		{{ form }}
-		<button type="submit">Signup</button>
-	</form>
+	<div>
+		<form id="form" method="post">
+			<div id="greeting">
+				<h2>Welcome aboard!</h2>
+				<p>We are Excited to have you here</p>
+			</div>
+			{% csrf_token %}
+			{{ form }}
+			<button type="submit">Signup</button>
+		</form>
+	</div>
 {% endblock form %}

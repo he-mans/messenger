@@ -9,40 +9,40 @@ from django.urls import reverse_lazy
 # Create your views here.
 
 def home(request):
-	if request.user.is_authenticated:
-		return redirect('chat-userHome')
-	return render(request,'authentication/home.html')
+    if request.user.is_authenticated:
+        return redirect('chat-userHome')
+    return render(request,'authentication/home.html')
 
 
 class signupView(generic.CreateView):
-	template_name = 'authentication/signup.html'
-	form_class = signupForm
-	success_url = reverse_lazy('auth-home')
+    template_name = 'authentication/signup.html'
+    form_class = signupForm
+    success_url = reverse_lazy('auth-home')
 
-class LoginView(generic.View):
-	form_class = loginForm
-	template_name = "authentication/login.html"
+class LoginView(generic.edit.FormView):
+    form_class = loginForm
+    template_name = "authentication/login.html"
+    success_url = reverse_lazy('chat-userHome')
 
-	def verify_user(self):
-		form=loginForm(self.request.POST)
-		username, password = self.request.POST['username'], self.request.POST['password']
-		user = authenticate(self.request,username=username, password=password)
-		return (user,form)
+    def get_success_url(self):
+         if self.request.GET.get('next',False):
+            return self.request.GET['next']
+         else:
+            return LoginView.success_url
 
-	def post(self, *args, **kwargs):
-		user,form= self.verify_user()
-		if user is not None:
-			login(self.request,user)
-			return redirect(self.request.GET['next']) if self.request.GET.get('next',False) else redirect('chat-userHome')
-		else:
-			messages.error(self.request,'wrong username or password')
-		return render(self.request,self.template_name,{"form":form})
-
-	def get(self, *args, **kwargs):
-		form=loginForm(None)
-		return render(self.request,self.template_name,{"form":form})	
+    def form_valid(self,form):
+        username,password = form.cleaned_data['username'],form.cleaned_data['password']
+        print(username,password)
+        user = authenticate(self.request,username=username,password=password)
+        if user is not None:
+            login(self.request,user)
+            self.success_url = self.get_success_url()
+            return super().form_valid(form)
+        else:
+            messages.error(self.request,'wrong username or password')
+            return render(self.request,self.template_name,{"form":form})
 
 def LogoutView(request):
-	if request.user.is_authenticated:
-		logout(request)
-	return redirect('auth-home')
+    if request.user.is_authenticated:
+        logout(request)
+    return redirect('auth-home')

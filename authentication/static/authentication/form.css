@@ -96,10 +96,10 @@
 	position:absolute;
 	top:90px;
 	color: #721c24;
-    background-color: rgba(239, 234, 235,.5);
-	width:430px;
+    background-color:rgba(234, 58, 58,.95);
+	width:425px;
 	border-radius:7px;
-	color:rgb(38, 38, 38);
+	color:rgb(20, 20, 20);
 	pointer-events:none;
 	font-family:'Yanone Kaffeesatz', sans-serif;
 	padding: 5px;

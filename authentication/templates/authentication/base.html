@@ -8,8 +8,10 @@
     
     <link rel="stylesheet" type="text/css" href="{% static 'authentication/base.css' %}">
     <link rel="stylesheet" href="{% static 'authentication/NavBar.css' %}">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     {% block addCss %}{% endblock addCss %}
+    {% block addScript %}{% endblock addScript %}
     
     <title>{% block title %}{% endblock title %}</title>
   </head>

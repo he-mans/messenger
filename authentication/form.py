@@ -15,7 +15,7 @@ class signupForm(UserCreationForm):
 		fields= ['username','email','password1','password2']
 
 	def __init__(self,*args,**kwargs):
-		super(signupForm, self).__init__(*args,**kwargs)
+		super().__init__(*args,**kwargs)
 		self.fields['password1'].widget.attrs.update({
 				"placeholder":"password",
 			})
@@ -36,8 +36,8 @@ class loginForm(forms.Form):
 	username=forms.CharField(label='')
 	password=forms.CharField(widget=forms.PasswordInput,label='')
 
-	def __init__(self,request,*args,**kwargs):
-		super(forms.Form,self).__init__(*args, **kwargs)
+	def __init__(self,*args,**kwargs):
+		super().__init__(*args, **kwargs)
 		self.fields['username'].widget.attrs.update({
 				"placeholder":"username"
 			})
