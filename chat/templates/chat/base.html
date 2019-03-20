@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed|Yanone+Kaffeesatz" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'chat/base.css' %}">
+    <link rel="stylesheet" href="{% static 'chat/NavBar.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    {% block addCss %}{% endblock addCss %}
+    {% block addScript %}{% endblock addScript %}
+    
+    <title>{% block title %}{% endblock title %}</title>
+  </head>
+  
+  <body>
+    <div id="AppRoot">
+        
+      <div id="navBar">
+          <nav id="nav1">
+            <ul>
+              {% block navLogo %}{% endblock navLogo %}
+              <li><a href="#">Your Chats </a></li>
+            </ul>
+          </nav>
+
+          <nav id="nav2">
+            <ul>
+              <li><a href="{% url 'chat-profile-settings' %}">Profile</a></li>
+              {% block navLoginLogout %}{% endblock navLoginLogout %}
+            </ul>
+          </nav>
+      </div>
+
+      {% block body %}{% endblock body %}
+        
+    </div> 
+  </body>
+</html>

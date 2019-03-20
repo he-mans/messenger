@@ -77,7 +77,7 @@
 }
 
 #greeting h2{
-	color:white;
+	color:rgb(239, 239, 239);
 	font-family:'Yanone Kaffeesatz', sans-serif;
 	font-size: 40px;
 	padding-bottom: 10px;
@@ -85,7 +85,7 @@
 }
 
 #greeting p{
-	color:white;
+	color:rgb(206, 206, 206);
 	font-family:'Yanone Kaffeesatz', sans-serif;
 	font-size:20px;
 	padding-bottom:30px;

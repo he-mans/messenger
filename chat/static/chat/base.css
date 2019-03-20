@@ -1,0 +1,11 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+#AuthRoot{
+    background-size: 100% 100%;
+    backgroud-repeat: no-repeat;
+    height: 125vh;
+    width: 100%;
+}	

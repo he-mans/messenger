@@ -1,0 +1,50 @@
+{% extends 'chat/base.html' %}
+{% load static %}
+
+{% block addCss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'chat/profileView.css' %}">
+{% endblock addCss %}
+
+{% block navLogo %}
+	{% if authenticated %}
+		<li><a href="{% url 'chat-userHome' %}"><img src="{% static 'chat/images/logo.png'%}" alt='logo'></a></li>
+	{% else %}
+		<li><a href="{% url 'auth-home' %}"><img src="{% static 'chat/images/logo.png' %}" alt="logo"></a></li>
+	{% endif %}
+{% endblock navLogo %}
+
+{% block navLoginLogout %}
+	{% if authenticated %}
+		<li><a href="{% url 'auth-logout' %}">Logout</a></li>
+	{% else %}
+		<li><a href="{% url 'auth-login' %}">Login</a></li>
+	{% endif %}
+{% endblock navLoginLogout %}
+{% block body %}
+	<div class="container">
+		<div id="profilePic">
+			<img src="{{ profilePic }}", alt='user porifle picture' />
+		</div>
+	</div>
+	<div class="container">
+		<div id="username">
+			<h1>{{ user.username }}</h1>
+		</div>
+		<div id="email">
+			<p>{{ user.email }}</p>
+		</div>
+	</div>
+	<div id="action">
+		<div id="message">
+			<div class="button">
+				<p>message</p>
+			</div>
+		</div>
+		<div id='report'>
+			<div class="button">
+				<p>report</p>
+			</div>
+		</div>
+	</div>
+
+{% endblock body %}

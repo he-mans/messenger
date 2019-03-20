@@ -1,0 +1,165 @@
+#AppRoot{
+	background-image: radial-gradient(
+										rgb(33, 33, 33),
+										rgb(35, 35, 35),
+										rgb(28, 28, 28),
+										rgb(15, 15, 15),
+										rgb(10,10,10)
+									);
+	height: 120vh;
+	bakcground-size:cover;
+	background-position: center;
+}
+
+#container{
+	padding-left:200px;
+	padding-right:200px;
+	padding-top:50px;
+	display:grid;
+	grid-template-columns: .34fr .66fr;
+	grid-template-areas: 
+	"image form";
+}
+
+.image{
+	grid-area:image;
+}
+
+.form{
+	grid-area:form;
+}
+
+#profilePic img{
+		border-radius: 50%;
+		height:250px;
+}
+
+#form a{
+	display:none;
+}
+
+#form{
+	padding-top:10px;
+	display:flex;
+	flex-flow: column wrap;
+	justify-content: flex-end;
+}
+
+#form input{
+	
+	padding: 7px 0 7px 5px;
+	width:100%;
+	height: 30px;
+	font-family:Yanone Kaffeesatz;
+	background-color: rgba(0,0,0,0);
+	border-width:0px;
+	color:rgb(206, 206, 206);
+}
+
+#form input[name=username]{
+	font-size: 55px;
+	height:60px;
+	border-width: 0px;
+	background-color: rgba(0,0,0,0)
+	
+}
+
+#form input[name=email]{
+
+	font-size: 22px;
+}
+
+#form input[name=status]{
+	font-size: 20px;
+}
+
+#form input[type=File]{
+	display:none;
+}
+
+#labelHolder{
+	padding-top:13px;
+}
+
+label{
+	width:90px;
+}
+
+#customFileButton{
+	background-color:white;
+	width: 90px;
+	height:35px;
+	border-radius:5px;
+	display:flex;
+	justify-content: center;
+	font-family: Yanone Kaffeesatz;
+	font-size:16px;
+	border:solid;
+	border-width:1.2px;
+	border-color:#668cff;
+	cursor:pointer;
+}
+
+#customFileButton p{
+	align-self: center;
+	cursor:pointer;
+} 
+
+#action{
+	display:grid;
+	grid-template-areas:
+	"save back";
+	position:absolute;
+	right:200px;
+}
+
+#save{
+	grid-area:save;
+	display: flex;
+	justify-content:flex-end;
+	padding-right:10px;
+}
+
+#back{
+	grid-area:back;
+	display: flex;
+	justify-content: flex-start;
+	
+}
+
+#action .buttonDiv .link{
+	display: flex;
+	justify-content: flex-start;
+	text-decoration: none;
+}
+
+.button{
+	width: 130px ;
+	height:27px ;
+	border-radius:5px;
+	border-width:5px;
+	display:flex;
+	justify-content: center;
+	padding-top: 10px;
+	transition: all .2s ease-in-out;
+	cursor:pointer;
+}
+
+.button:hover{
+	box-shadow: 0px 5px 50px #000000;
+}
+
+.button p{
+	font-family: Yanone Kaffeesatz;
+	font-size: 19px;
+	color:rgb(17, 17, 17);
+}
+
+#save div{
+	background-color:rgb(136, 252, 128);
+}
+
+
+#back .link div{
+	background-color:rgb(255, 84, 84);
+}

@@ -1,0 +1,76 @@
+{% extends 'chat/base.html' %}
+{% load static %}
+
+{% block addCss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'chat/updateProfile.css' %}">
+{% endblock addCss %}
+
+{% block navLogo %}
+	<li><a href="{% url 'chat-userHome' %}"><img src= "{% static 'chat/images/logo.png' %}" alt="chatting_django"></a></li>
+{% endblock navLogo %}
+
+{% block navLoginLogout %}
+	<li><a href="{% url 'auth-logout' %}">Logout</a></li>
+{% endblock navLoginLogout %}
+
+{% block addScript %}
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#save").hide()
+			$("input").on('input',function(e){
+				$("#save").fadeIn(300)
+			})
+
+			$(":file").on('input',function(e){
+				$("#customFileButton").css({
+											'backgroundColor':'#668cff',
+											'border-color':'white',
+											'border-width':'1.3px'
+										})
+				$("#customFileButton > P").text("selected")
+			})
+
+		})
+	</script>
+{% endblock addScript %}
+
+{% block body %}
+	<div id="container">
+		<div class="container image">
+			<div id="profilePic">
+				<img src={{ profilePic }}>
+			</div>
+		</div>
+		
+		<div class="container form">
+			<form id="form" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ user_form }}	
+				{{ profile_form }}
+				<div id="labelHolder">
+					<label for="id_profile_picture">
+						<div id="customFileButton">
+							<p>new picture</p>
+						</div>
+					</label>
+				</div>
+				<div id="action">
+					<div class="buttonDiv" id="save">
+						<a class="link" href="javascript:{}" onclick="document.getElementById('form').submit();">
+							<div class="button">
+								<p>update</p>
+							</div>
+						</a>
+					</div>
+					<div class= "buttonDiv" id='back'>
+						<a class="link" href="{% url 'chat-userHome' %}">
+							<div class="button">
+								<p>back</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock body %}

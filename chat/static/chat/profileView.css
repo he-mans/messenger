@@ -1,0 +1,104 @@
+#AppRoot{
+	/* background-image: url(./images/formBackground.jpg); */
+	background-image: radial-gradient(
+										rgb(33, 33, 33),
+										rgb(35, 35, 35),
+										rgb(28, 28, 28),
+										rgb(15, 15, 15),
+										rgb(10,10,10)
+									);
+	height: 120vh;
+	bakcground-size:cover;
+	background-position: center;
+}
+
+#profilePic{
+	padding-top: 15vh;
+	display:flex;
+	justify-content: center;
+
+}
+
+#profilePic img{
+	border-radius: 50%;
+}
+
+#username{
+	color:rgb(206, 206, 206);
+	padding-top:20px;
+	width:100%;
+	display:flex;
+	justify-content: center;
+}
+
+#email{
+	display:flex;
+	justify-content: center;
+	padding-top:15px;
+	color:rgb(206, 206, 206);
+}
+
+#email p{
+	font-family: Yanone Kaffeesatz;
+}
+
+#username h1{
+	font-family: Yanone Kaffeesatz;
+	letter-spacing: 1.7px;
+	font-size:40px;
+}
+
+#email p{
+
+}
+
+#action{
+	display:grid;
+	grid-template-areas:
+	"message report";
+	padding-top:50px;
+}
+
+#message{
+	grid-area:message;
+	display: flex;
+	justify-content:flex-end;
+	padding-right:30px;
+}
+
+#report{
+	grid-area:report;
+	display: flex;
+	justify-content: flex-start;
+	padding-left: 30px;
+}
+
+.button{
+	width: 180px ;
+	height:37px ;
+	border-radius:5px;
+	border-width:5px;
+	display:flex;
+	justify-content: center;
+	padding-top:17px;
+	transition: all .2s ease-in-out;
+	cursor:pointer;
+}
+
+.button:hover{
+	box-shadow: 0px 5px 50px #000000;
+}
+
+.button p{
+	font-family: Yanone Kaffeesatz;
+	font-size: 19px;
+	color:rgb(17, 17, 17);
+}
+
+#message div{
+	background-color:rgb(136, 252, 128);
+}
+
+#report div{
+	background-color:rgb(255, 84, 84);
+}
