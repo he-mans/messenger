@@ -10,7 +10,7 @@
 {% endblock navLogo %}
 
 {% block navLoginLogout %}
-	<li><a href="{% url 'auth-logout' %}">Logout</a></li>
+	<li><a href="{% url 'auth-logout' %}"><img src="{% static 'chat/images/logout.png' %}"></a></li>
 {% endblock navLoginLogout %}
 
 {% block addScript %}

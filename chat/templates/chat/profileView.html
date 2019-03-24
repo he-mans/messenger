@@ -7,17 +7,17 @@
 
 {% block navLogo %}
 	{% if authenticated %}
-		<li><a href="{% url 'chat-userHome' %}"><img src="{% static 'chat/images/logo.png'%}" alt='logo'></a></li>
+		<li><a href="{% url 'chat-userHome' %}"><img src="{% static 'chat/images/logo.png'%}" alt='home'></a></li>
 	{% else %}
-		<li><a href="{% url 'auth-home' %}"><img src="{% static 'chat/images/logo.png' %}" alt="logo"></a></li>
+		<li><a href="{% url 'auth-home' %}"><img src="{% static 'chat/images/logo.png' %}" alt="home"></a></li>
 	{% endif %}
 {% endblock navLogo %}
 
 {% block navLoginLogout %}
 	{% if authenticated %}
-		<li><a href="{% url 'auth-logout' %}">Logout</a></li>
+		<li><a href="{% url 'auth-logout' %}"><img src="{% static 'chat/images/logout.png' %}" alt="logout"></a></li>
 	{% else %}
-		<li><a href="{% url 'auth-login' %}">Login</a></li>
+		<li><a href="{% url 'auth-login' %}"><img src="{% static 'chat/images/login.png' %}" alt="login"></a></li>
 	{% endif %}
 {% endblock navLoginLogout %}
 {% block body %}

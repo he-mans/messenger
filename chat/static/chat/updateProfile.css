@@ -47,11 +47,11 @@
 
 #form .errorlist{
 	list-style:none;
-	background-color:rgba(234, 58, 58,.94);
+	background-color:rgba(234, 58, 58,.95);
 	border-radius:5px;
 	padding:6px 6px 6px 6px;
 	font-family:Yanone Kaffeesatz; 
-	color:rgb(20, 20, 20);
+	color:rgb(15, 15, 15);
 }	
 
 #form input{
@@ -152,6 +152,7 @@
 	justify-content: center;
 	padding-top: 10px;
 	transition: all .2s ease-in-out;
+	-moz-transition: all .3s ease-out;
 	cursor:pointer;
 }
 

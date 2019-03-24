@@ -36,6 +36,7 @@ a{
 	border-radius: 7px 7px 7px 7px;
 
 	transition: all .22s ease-in-out 0s;
+	-moz-transition: all .25s ease-in-out 0s;
 }
 
 #content_login{
@@ -52,7 +53,7 @@ a{
 
 .join h4{
 	text-align:center;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: 'Yanone Kaffeesatz';
 	font-size: 15px;
 	letter-spacing:1px;
 	padding-bottom:3px;
@@ -61,7 +62,7 @@ a{
 
 .join p{
 	text-align:center;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: 'Yanone Kaffeesatz';
 	font-size: 13px;
 	padding-top: 2px;
 }

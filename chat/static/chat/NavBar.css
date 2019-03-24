@@ -18,6 +18,7 @@ nav{
 
 #nav2{
 	gird-area:navigation_;
+	margin-left: auto;
 }
 
 nav ul{
@@ -30,7 +31,7 @@ nav ul{
 }
 
 #nav2 ul{
-	flex-flow: row-reverse wrap;
+	flex-flow: row wrap;
 	margin-right:20px;
 }
 
@@ -47,8 +48,14 @@ nav ul li{
 
 #nav2 ul li{
 	padding: 16px 20px 0px 5px;
-	margin-top: 18px;
+	margin-top: 10px;
 	margin-right:10px;
+}
+
+#nav2 ul li img{
+	height:40px;
+	width: 40px;
+	border-radius: 50%;
 }
 
 
@@ -58,10 +65,10 @@ nav ul li a{
 }
 
 #nav1 ul li img{
-	height:35px;
-	width: 35px;
+	height:40px;
+	width: 40px;
 	margin-top: 3px;
 	margin-left: 5px;
-	padding-right: 10px
+	padding-right: 10px;
 }
 

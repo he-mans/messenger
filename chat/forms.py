@@ -33,3 +33,12 @@ class UserUpdateForm(forms.ModelForm):
         self.fields['email'].widget.attrs.update({
                 "placeholder":"email"
             })
+
+class searchForm(forms.Form):
+    username = forms.CharField(label='',)
+   
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self.fields['username'].widget.attrs.update({
+                 "placeholder":"search by username"
+             })

@@ -1,9 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	this is {{user}} profile
-</body>
-</html>
+{% extends 'chat/base.html' %}
+{% load static %}
+
+{% block addCss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'chat/userHome.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'chat/userHomeNavBar.css' %}">
+{% endblock addCss %}
+
+{% block navLogo %}
+	<li><a href="{% url 'chat-userHome' %}"><img src= "{% static 'chat/images/logo.png' %}" alt="chatting_django"></a></li>
+{% endblock navLogo %}
+
+{% block navLoginLogout %}
+	<li><a href="{% url 'auth-logout' %}"><img src="{% static 'chat/images/logout.png' %}"></a></li>
+{% endblock navLoginLogout %}
+
+{% block body %}
+	<div id="chatRoot" current-user="{{ request.user.username }}">
+		<div class="hideScrollBar" id="sideBar" >
+			<form novalidate id="searchInput" method="get" search-url="{% url 'chat-search-user' %}" >
+				{% csrf_token %}
+				{{search}}
+			</form>
+			<div id="chats" class="sideBarContent">
+				<ul></ul>
+			</div>
+			<div id="contacts" class="sideBarContent">
+				<ul>
+					{% for contact in contacts %}
+						<li class="addShadowSearch">
+							<img src="{{ contact.contact.profile.profile_picture.url }}">
+							<div>
+								<p>{{ contact.contact.username }}</p>
+								<a>view profile</a>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div id='messageArea'>
+			<div id="messages">
+			</div>
+			<div id="textareaHolder">
+				<form novalidate id="messageTypeArea" send-to="{% url 'chatsDB-send' %}" >
+					{% csrf_token %}
+					{{ send_message_form }}
+					<button class="addShadow" type=submit></button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock body %}
+
+{% block addScript %}
+	<script src="{% static 'chat/javascript/userHome.js' %}"></script>
+{% endblock addScript %}

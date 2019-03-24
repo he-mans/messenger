@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 from .models import Profile
 from django.views import generic
 from .forms import ProfileUpdateForm, UserUpdateForm
+from . import forms
+from django.http import JsonResponse
+from chatsDB.forms import SendMessageForm
+from chatsDB import views as chatsDBviews
 
 class ProfileView(generic.DetailView):
 	template_name = 'chat/profileView.html'
@@ -51,6 +55,30 @@ class ProfileSettings(LoginRequiredMixin,generic.View):
 		return redirect('chat-profile-settings')
 
 
-def userHome(request):
-	user=request.user.username
-	return render(request, 'chat/userHome.html', {"user":user})
+class UserHome(LoginRequiredMixin, generic.View):
+	template_name = 'chat/userHome.html'
+
+	def get(self,*args,**kwargs):
+		search_form = forms.searchForm()
+		send_message_form = SendMessageForm()
+		contacts_detail = chatsDBviews.getContactsDetail(self.request)
+		context={
+			"search":search_form,
+			"send_message_form":send_message_form,
+			"contacts":contacts_detail
+		}
+		return render(self.request,self.template_name,context)
+
+
+def SearchUser(request):
+	search_query = request.GET.get('username').strip()
+	results = User.objects.filter(username__contains=search_query)
+	results = [{"username":result.username,
+				"profile_picture":result.profile.profile_picture.url}
+				for result in results
+			] 
+
+	data = {
+			"result":results,
+		}
+	return JsonResponse(data)

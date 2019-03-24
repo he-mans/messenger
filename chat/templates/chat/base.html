@@ -21,18 +21,16 @@
   
   <body>
     <div id="AppRoot">
-        
       <div id="navBar">
           <nav id="nav1">
             <ul>
               {% block navLogo %}{% endblock navLogo %}
-              <li><a href="#">Your Chats </a></li>
             </ul>
           </nav>
 
           <nav id="nav2">
             <ul>
-              <li><a href="{% url 'chat-profile-settings' %}">Profile</a></li>
+              <li><a href="{% url 'chat-profile-settings' %}"><img src="{% static 'chat/images/profile.png' %}" alt="profile"></a></li>
               {% block navLoginLogout %}{% endblock navLoginLogout %}
             </ul>
           </nav>

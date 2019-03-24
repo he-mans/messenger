@@ -14,8 +14,8 @@ class Profile(models.Model):
 	def __str__(self):
 		return f'{self.user.username}'
 
-	def save(self):
-		super().save()	
+	def save(self, *args, **kwargs):
+		super().save(*args, **kwargs)	
 		
 		output_size=(300,300)
 		image = Image.open(self.profile_picture.path)
