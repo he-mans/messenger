@@ -51,12 +51,13 @@
 #messageArea{
 	grid-area:messageArea;
 	background-color:rgb(50, 50, 50);
+	overflow: hidden;
 	width:85%;
 	display:grid;
 	grid-template-rows:.95fr .05fr;
 	grid-template-areas:
 	"display"
-	"testAreaHolder";
+	"textAreaHolder";
 }
 
 #searchInput{
@@ -65,21 +66,21 @@
 
 #searchInput input[type=text]{
 	background-image:url(./images/search.png);
-	background-size: 60px 60px;
+	background-size: 70px 70px;
 	background-repeat: no-repeat;
-	background-position: 5px 5px;
-	width:70%;
-	height:70px;
+	background-position: 5px 10px;
+	width:67.5%;
+	height:90px;
 	margin:0 3px 0 3px;
 	border-style: none;
 	border-radius: 12px;
-	padding: 0px 4px 0px 80px;
+	padding: 0px 4px 0px 90px;
 	font-family: Yanone Kaffeesatz;
 	color:rgb(206,206,206);
 	font-size:17px;
 	background-color: rgb(50,50,50);
 	outline:none;
-	transition: all .3s linear;
+	transition: all .25s linear;
 	box-shadow: 0 0 10px rgb(20,20,20);
 }
 
@@ -103,13 +104,13 @@
 
 #searchInput input[type=text]:focus{
 	color:rgb(40, 40, 40);
-	background-color:rgb(240, 240, 240);
+	background-color:rgb(230, 230, 230);
 	box-shadow: 0px 0px 50px black;
-	height:30px;
+	/* height:30px;
 	background-size: 25px 25px;
 	background-position: 5px 3px;
 	padding-left:40px;
-	width:80%;
+	width:83%; */
 }
 
 #searchInput input[type=text]:blur{
@@ -118,29 +119,36 @@
 	height:70px;
 }
 
-#chats{
+.sideBarContent{
 	height: auto;
 }
 
-#chats ul{
+.sideBarContent ul{
 	padding:20px 10px 10px 10px;
 	list-style:none;
 }
 
-#chats ul li{
+.sideBarContent ul li{
+	cursor: pointer;
 	color:rgb(206, 206, 206);
 	padding:5px 0px 0px 5px;
-	width:95%;
+	width:96.5%;
+	height: 90px;
 	background-color: rgb(50,50,50);
 	margin: 0px 7px 10px 2px;
 	border-radius:12px;
 	display:grid;
+	transition: all .1s linear;
 	grid-template-columns: .25fr .75fr;
 	grid-template-areas: 
 	"image username";
 }
 
-#chats ul .noResult{
+.sideBarContent ul .selectedChatWindow{
+	background-color: rgb(90,90,90)
+}
+
+.sideBarContent ul .noResult{
 	margin-top: 20px;
 	color:rgb(30,30,30);
 	font-family:Yanone Kaffeesatz;
@@ -153,14 +161,15 @@
 	width:66.5%;
 }
 
-#chats ul li img{
-	height: 60px;
-	border-radius: 50%;
-	padding:1px 2px 3px 3px;
+.sideBarContent ul li img{
+	width: 100px;
+	height: 100px;
+	border-radius:50%;
+	padding: 5px 5px 5px 5px;
 	grid-area:image;
 }
 
-#chats ul li div{
+.sideBarContent ul li .outer{
 	grid-area:username;
 	padding-top:10px;	
 	padding-left:5px;
@@ -169,39 +178,110 @@
 	font-size:18px;
 }
 
-#chats ul li div p{
-	padding-bottom: 8px;
+.sideBarContent ul li .outer h1{
+	padding-bottom: 5px;
+	font-size:20px;
 }
 
-#chats ul li div a{
-	float:left;
-	margin-left:140px;
+.sideBarContent ul li .outer p{
+	padding-bottom: 8px;
+	line-height: 1.2;
+	font-size:15px;
+	overflow: hidden hidden;
+	text-overflow:ellipsis;
+	max-height:8px;
+	max-width:80%;
+
+}
+
+.sideBarContent ul li .outer .inner{
+	display: flex;	
+	flex-flow: row-reverse;
+	padding-top:10px;
+	
+}
+
+.sideBarContent ul li .outer .inner p{
+	background-color:rgb(189, 232, 176);
+	margin-right: 10px;
+	heigth:30px;
+	width: 20px;
+	font-family: Yanone Kaffeesatz;
+	border-radius: 50%;
+	color:rgb(60,60,60);
+	text-align: center;
+	padding:6px 0 6px 0;
+	line-height: .5;
+
+}
+
+.sideBarContent ul li .outer .inner a{
+	
+	height:18%;
+	margin-right: 10px;
 	background-color:rgb(189, 232, 176);
 	padding:3px 5px 3px 5px;
 	font-size:13px;
 	border-radius: 5px;
 	color:rgb(60,60,60);
 	cursor:pointer;
-	transition: all .25s ease-in-out;
 }
 
-#contacts{
-	background-color: red;
-	height: auto;
-	width: 40px;
+.sideBarContent ul li .outer .inner .report{
+	background-color:rgb(255, 84, 84);
+	color:black;
 }
 
 /* ================================================================================= */
 
 #messages{
-	height:100%;
+	max-height:100%;
 	grid-area:display;
+	overflow:hidden;
+	display:flex;
+	flex-direction: column-reverse;
+	width:96%;
+}
+
+
+#messages ul{
+	list-style:none;
+	height:auto;
+	overflow:auto;
+	padding: 10px 50px 30px 50px;
+	scrollbar-width:none;
+}
+
+#messages ul li{
+	background-color:rgb(104, 153, 232);
+	max-width:40%;
+	margin:10px 10px 10px 10px;
+	padding: 5px 8px 5px 8px;
+	border-radius: 8px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size:17px;
+	box-shadow: 0 0 10px rgb(20,20,20);
+	display: table;
+}
+
+
+#messages ul .sent{
+	background-color:rgb(104, 153, 232);
+	text-align: right;
+	margin-left: auto;
+}
+
+#messages ul .received{
+	background-color:rgb(255,255,255);
+	text-align:left;	
+	margin-right: auto;
 }
 
 #textareaHolder{
-	grid-area:testAreaHolder;
+	grid-area:textAreaHolder;
+	width:100%;
 	display:grid;
-	grid-template-columns: .95fr .05fr;
+	grid-template-columns: .94fr .06fr;
 	grid-template-areas:
 	"textArea sendButton";
 	transition: all .3s ease-in-out;
@@ -212,8 +292,8 @@
 #messageTypeArea textarea{
 	grid-area:textArea;
 	height:20px;
-	width:94%;
-	padding:10px 5px 5px 10px;
+	width:86%;
+	padding:10px 5px 5px 60px;
 	border-style:none;
 	font-family:Yanone Kaffeesatz;
 	font-size:20px;

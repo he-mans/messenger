@@ -8,6 +8,7 @@ from . import forms
 from django.http import JsonResponse
 from chatsDB.forms import SendMessageForm
 from chatsDB import views as chatsDBviews
+from django.db.models import Q
 
 class ProfileView(generic.DetailView):
 	template_name = 'chat/profileView.html'
@@ -72,11 +73,16 @@ class UserHome(LoginRequiredMixin, generic.View):
 
 def SearchUser(request):
 	search_query = request.GET.get('username').strip()
-	results = User.objects.filter(username__contains=search_query)
-	results = [{"username":result.username,
-				"profile_picture":result.profile.profile_picture.url}
-				for result in results
-			] 
+	user = request.GET.get('user')
+	results = User.objects.filter( Q(username__contains=search_query)& ~Q(username=user) ) 
+
+	results = [{
+	 			"username":result.username,
+	 			"profile_picture":result.profile.profile_picture.url,
+	 			"status":result.profile.status
+	 			}
+	 			for result in results
+	 		] 
 
 	data = {
 			"result":results,
