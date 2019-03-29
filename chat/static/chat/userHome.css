@@ -217,6 +217,8 @@
 
 .sideBarContent ul li .outer .inner a{
 	
+	text-decoration: none;
+	font-color:black;
 	height:18%;
 	margin-right: 10px;
 	background-color:rgb(189, 232, 176);

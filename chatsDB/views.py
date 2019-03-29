@@ -35,8 +35,6 @@ def SaveMessageView(request):
         message.save(overrideSave=True,)
     return JsonResponse({"saved":"true"})
 
-def getUnreadMessages(request):
-    pass
 
 def getContactsDetail(request):
     contacts = Contacts.objects.filter(user=request.user).all()
@@ -65,6 +63,13 @@ def GetMessagesView(request):
         message.save(overrideSave=False)
     return JsonResponse({"messages":messages})
 
+def GetProfilePicture(data):
+    username = data.GET.get('username')
+    profilePic = User.objects.filter(username=username).first()
+    profilePic = profilePic.profile.profile_picture.url
+    print("sadfsdfsafasdfasdfasdfasdfasdfsd\n\n\n")
+    return JsonResponse({"profile_picture":profilePic})
+
 def getNotification(user):
     notifications = Contacts.objects.filter( 
                                             Q(user__username=user)
@@ -72,7 +77,8 @@ def getNotification(user):
                                             &Q(last_message__delivered=False) 
                                             ).order_by('last_message__date_created'
                                             ).values  ('contact__username','unread_messages',
-                                                       'last_message__message')
+                                                       'last_message__message',
+                                                      )
     return list(notifications)
 
 def CheckMessagesView(request):

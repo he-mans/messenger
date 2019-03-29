@@ -15,7 +15,7 @@
 {% endblock navLoginLogout %}
 
 {% block body %}
-	<div id="chatRoot" current-user="{{ request.user.username }}" current-chat-window="" get-message-url="{% url 'chatsDB-get' %}" check-new-message="{% url 'chatsDB-check' %}">
+	<div id="chatRoot" current-user="{{ request.user.username }}" current-chat-window="" get-message-url="{% url 'chatsDB-get' %}" check-new-message="{% url 'chatsDB-check' %}" profile-view-url="scout/" get-profile-picture='{% url "chatsDB-get-dp" %}'>
 		<div class="hideScrollBar" id="sideBar" >
 			<form novalidate id="searchInput" method="get" search-url="{% url 'chat-search-user' %}" >
 				{% csrf_token %}
@@ -33,7 +33,7 @@
 								<h1>{{ contact.contact.username }}</h1>
 								<p>{{ contact.last_message.message }}</p>
 								<div class="inner">
-									<a>view profile</a>
+									<a onclick="viewProfileClicked(event)" target="_blank" href="{% url 'chat-profile' username=contact.contact.username %}">view profile</a>
 									{% if contact.unread_messages %}
 										<p>{{ contact.unread_messages }}</p>
 									{% endif %}

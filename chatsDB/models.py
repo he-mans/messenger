@@ -34,7 +34,7 @@ class Messages(models.Model):
 class Contacts(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="contacts")
 	contact = models.ForeignKey(User,on_delete=models.CASCADE, related_name="inContactList")
-	last_message = models.ForeignKey(Messages, null=True,blank=True,on_delete=models.PROTECT)
+	last_message = models.ForeignKey(Messages, null=True,blank=True,on_delete=models.SET_NULL)
 	unread_messages = models.PositiveIntegerField(null=False, default=0, validators=[MinValueValidator(0)])
 
 	def __str__(self):

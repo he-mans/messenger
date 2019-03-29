@@ -1,12 +1,18 @@
+let viewProfileClicked= function(event){
+			event.stopPropagation()
+		}
+
 let addContactToSideBar = function(result,$chatArea){
 	let sendMessageLink = $chatArea.attr('view-profile-link')
+		var href = $("#chatRoot").attr('profile-view-url')
+		href= href+result['username']
 		let listItem = `<li class="addShadowSearch" onclick='setCurrentChatWindow(event)'>
 							<img src=${result["profile_picture"]}>
 							<div class="outer">
 								<h1>${result["username"]}</h1>
 								<p>${result["status"]}</p>
 								<div class="inner">
-										<a>view profile</a>
+										<a onclick="viewProfileClicked(event)" target="_blank" href="${href}">view profile</a>
 										<a class="report">report user</a>
 								</div>
 							</div>
@@ -139,18 +145,60 @@ let setCurrentChatWindow = function(e){
 	
 }
 
+let applyProfilePicture = function(profile_picture,userTile){
+	 console.log("asdfsdfs")
+	 console.log(profile_picture)	
+	 userTile.find('img').eq(0).attr('src',profile_picture['profile_picture'])
+}
+
+let getProfilePicture = function(username,userTile){
+	var url = $('#chatRoot').attr('get-profile-picture')
+	$.ajax({
+		method:"GET",
+		dataType:"json",
+		data:{"username":username},
+		url: url,
+		success: (data) => applyProfilePicture(data,userTile)
+	})
+}
+
+let createContactTile = function(contact){
+	var href = $("#chatRoot").attr('profile-view-url')
+	href= href+contact['user__username']
+	let listItem = `<li username=${contact['contact__username']} class="addShadowSearch" onclick='setCurrentChatWindow(event)'>
+							<img src=''>
+							<div class="outer">
+								<h1>${contact["contact__username"]}</h1>
+								<p></p>
+								<div class="inner">
+										<a onclick="viewProfileClicked(event)" target="_blank" href="${href}">view profile</a>
+										<p></p>
+								</div>
+							</div>
+						</li>`
+	return listItem
+}
+
 let showNotification = function(notification){
-	let notificationBy = $(`[username=${notification['contact__username']}]`)
-	notificationBy.parent().prepend(notificationBy)
-	let $lastMessageDisplay = notificationBy.find(".outer > p").eq(0)
-	$lastMessageDisplay.text(notification['last_message__message'])
-	notificationBy = notificationBy.eq(0).find(".inner").eq(0)
-	if(notificationBy.has("p").length === 0){
-		notificationBy.append(`<p>${notification['unread_messages']}`)
+	let userTile = $(`[username=${notification['contact__username']}]`)
+	if(userTile.length == 0){
+		userTile = createContactTile(notification)
+		$("#contacts > ul").prepend(userTile)
+		userTile=$(`[username=${notification['contact__username']}]`)
+		getProfilePicture(notification["contact__username"], userTile)
 	}
 	else{
-		notificationBy = notificationBy.find('p')
-		notificationBy.text(notification['unread_messages'])	
+		userTile.parent().prepend(userTile)
+	}
+	let $lastMessageDisplay = userTile.find(".outer > p").eq(0)
+	$lastMessageDisplay.text(notification['last_message__message'])
+	userTile = userTile.eq(0).find(".inner").eq(0)
+	if(userTile.has("p").length === 0){
+		userTile.append(`<p>${notification['unread_messages']}`)
+	}
+	else{
+		userTile = userTile.find('p')
+		userTile.text(notification['unread_messages'])	
 	}
 }
 
