@@ -5,7 +5,7 @@
 	background-position: center;
 	overflow:hidden;
 	display:grid;
-	grid-template-columns: .09fr .75fr;
+	grid-template-columns: .09fr 1fr;
 	grid-template-areas:
 	"navigationBar chatRoot";
 }
@@ -15,7 +15,7 @@
 }
 
 
-#navigationSlider{
+/* #navigationSlider{
 	position: absolute;
 	right:20px;
 	width:20px;
@@ -25,25 +25,24 @@
 	background-size:100% 100%;
 	transition: transform .3s;
 	outline:none;
-}
+} */
 
 #chatRoot{
 	grid-area:chatRoot;
-	width:140%;
-	height:94vh;
+	width:100%;
+	height:100vh;
 	display:grid;
-	grid-template-columns: .24fr .76fr;
+	grid-template-columns: minmax(300px,.36fr) 1fr;
 	grid-template-areas:
 	"sideBar messageArea";
 }
 
 #sideBar{
 	grid-area:sideBar;
-	border-right-style:none;
-	border-right-width:2px;
-	border-right-color:grey;
+	width:100%;
 	height:100vh;
 	overflow: auto;
+	overflow-x:hidden;
 	padding-top:7px;
 	scrollbar-width:none;
 }
@@ -52,7 +51,7 @@
 	grid-area:messageArea;
 	background-color:rgb(50, 50, 50);
 	overflow: hidden;
-	width:85%;
+	width:100%;
 	display:grid;
 	grid-template-rows:.95fr .05fr;
 	grid-template-areas:
@@ -61,7 +60,8 @@
 }
 
 #searchInput{
-	padding: 5px 5px 5px 10px;
+	padding: 5px 0px 5px 10px;
+	width:100%;
 }
 
 #searchInput input[type=text]{
@@ -69,15 +69,16 @@
 	background-size: 70px 70px;
 	background-repeat: no-repeat;
 	background-position: 5px 10px;
-	width:67.5%;
+	width: 92%;
 	height:90px;
 	margin:0 3px 0 3px;
 	border-style: none;
 	border-radius: 12px;
-	padding: 0px 4px 0px 90px;
+	padding: 0px 0px 0px 0px;
 	font-family: Yanone Kaffeesatz;
 	color:rgb(206,206,206);
 	font-size:17px;
+	text-align: center;
 	background-color: rgb(50,50,50);
 	outline:none;
 	transition: all .25s linear;
@@ -106,11 +107,6 @@
 	color:rgb(40, 40, 40);
 	background-color:rgb(230, 230, 230);
 	box-shadow: 0px 0px 50px black;
-	/* height:30px;
-	background-size: 25px 25px;
-	background-position: 5px 3px;
-	padding-left:40px;
-	width:83%; */
 }
 
 #searchInput input[type=text]:blur{
@@ -121,25 +117,28 @@
 
 .sideBarContent{
 	height: auto;
+	width: 100%;
+	overflow: hidden;
 }
 
 .sideBarContent ul{
-	padding:20px 10px 10px 10px;
+	padding:20px 0px 10px 10px;
 	list-style:none;
+	width:95%;
+	min-width: 90%;
 }
 
 .sideBarContent ul li{
 	cursor: pointer;
 	color:rgb(206, 206, 206);
 	padding:5px 0px 0px 5px;
-	width:96.5%;
 	height: 90px;
 	background-color: rgb(50,50,50);
 	margin: 0px 7px 10px 2px;
 	border-radius:12px;
 	display:grid;
 	transition: all .1s linear;
-	grid-template-columns: .25fr .75fr;
+	grid-template-columns: .25fr 1fr;
 	grid-template-areas: 
 	"image username";
 }
@@ -157,8 +156,7 @@
 	border-radius:12px;
 	height:24px;
 	padding-top:6px;
-	padding-left:100px;
-	width:66.5%;
+	text-align: center;
 }
 
 .sideBarContent ul li img{
@@ -198,6 +196,7 @@
 	display: flex;	
 	flex-flow: row-reverse;
 	padding-top:10px;
+	width:100%;
 	
 }
 
@@ -238,11 +237,11 @@
 
 #messages{
 	max-height:100%;
+	width:100%;
 	grid-area:display;
 	overflow:hidden;
 	display:flex;
 	flex-direction: column-reverse;
-	width:96%;
 }
 
 
@@ -282,19 +281,16 @@
 #textareaHolder{
 	grid-area:textAreaHolder;
 	width:100%;
-	display:grid;
-	grid-template-columns: .94fr .06fr;
-	grid-template-areas:
-	"textArea sendButton";
+	display:inline-block;
 	transition: all .3s ease-in-out;
 	-moz-transition: all .3s linear;
 	box-shadow: 0px -4px 10px rgb(35,35,35);
+
 }
 
 #messageTypeArea textarea{
-	grid-area:textArea;
 	height:20px;
-	width:86%;
+	width:calc(100% - 150px);
 	padding:10px 5px 5px 60px;
 	border-style:none;
 	font-family:Yanone Kaffeesatz;
@@ -311,7 +307,6 @@
 }
 
 #messageTypeArea button{
-	grid-area:sendButton;
 	border-radius:50%;
 	height: 30px;
 	width:30px;
@@ -340,4 +335,12 @@
 
 .addShadowSearch{
 	box-shadow: 0 0 10px rgb(20,20,20);
+}
+/* ================================================================================= */
+
+@media screen and (max-width: 475){
+  #chatRoot{
+  	gird-template-areas:
+  	"chatRoot chatRoot";
+  }
 }

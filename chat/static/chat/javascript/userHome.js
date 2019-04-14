@@ -259,7 +259,7 @@ $(document).ready(function (){
 		
 		let $search = $("#searchInput")
 		let $send = $("#messageTypeArea > button")
-		
+	
 		miscEffets($search,$send)
 		
 		setInterval(checkNewMessages,1000)
