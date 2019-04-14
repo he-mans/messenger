@@ -20,12 +20,10 @@
 #form input{
 	background-color: white;
 	color:black;
-}
-
-#form input[type=text]{
 	width:300px;
 	height:25px;
 	padding: 5px;
+
 	font-family:'Yanone Kaffeesatz', sans-serif;;
 	font-size: 16px;
 	letter-spacing: .3px;
@@ -36,32 +34,8 @@
 	margin-bottom:10px;	
 }
 
-#form input[type=email]{
-	width:300px;
-	height:25px;
-	padding: 5px;
-	font-family:'Yanone Kaffeesatz', sans-serif;;
-	font-size: 16px;
-	letter-spacing: .3px;
-	border-radius: 6px 6px 6px 6px;
-	border-width: 1px;
-	border-color:black;
-	padding-left:7px;
-	margin-bottom:10px;
-}
-
 #form input[type=password]{
-	width:300px;
-	height:25px;
-	padding: 5px;
-	padding-left:7px;
-	font-family:'Yanone Kaffeesatz', sans-serif;;
-	font-size: 16px;
-	letter-spacing: .4px;	
-	border-radius: 6px 6px 6px 6px;
-	border-width: 1px;
-	border-color:black;
-	margin-bottom:10px;
+	letter-spacing: .4px;
 }
 #form button{
 	height:35px;
@@ -118,4 +92,38 @@
 	padding-bottom:3px;
 	padding-left:5px;
 	padding-right:5px;
+}
+
+@media screen and (min-height: 1024px){
+	#form{
+		height: 480px;
+		width: 500px;
+	}
+
+	#form:hover{
+		height:500px;
+		width: 520px;
+	}
+
+	#form input{
+		width:340px;
+		height:30px;
+		padding: 5px;
+		font-size: 17px;
+		letter-spacing: .3px;
+		border-width: 2px;
+	}
+
+	#form button{
+		height:40px;
+		width:355px;
+	}
+
+	#greeting h2{
+		font-size: 50px;
+	}
+
+	#greeting p{
+		font-size: 30px;
+	}
 }

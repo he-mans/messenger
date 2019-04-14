@@ -11,3 +11,23 @@
 	padding-top:70px;
 	align-items: center;
 }
+
+@media screen and (min-height: 768px){
+	#form{
+		margin-top:50px;
+	}
+}
+
+@media screen and (min-height: 1024px){
+	#form{
+		margin-top:350px;
+		background-origin: 100px;
+	}
+}
+
+@media screen and (min-height: 1366px){
+	#form{
+		margin-top:420px;
+	}
+}
+
