@@ -6,23 +6,26 @@
 										rgb(15, 15, 15),
 										rgb(10,10,10)
 									);
-	height: 120vh;
+	height: auto;
+	padding-bottom: 50vh;
 	bakcground-size:cover;
 	background-position: center;
+
 }
 
 #container{
-	padding-left:200px;
-	padding-right:200px;
-	padding-top:50px;
+	padding: 50px 20% 0px 20%;
 	display:grid;
-	grid-template-columns: .34fr .66fr;
+	grid-template-columns: .34fr 1fr;
+	grid-column-gap: 20px;
 	grid-template-areas: 
 	"image form";
 }
 
-.image{
+#profilePic{
 	grid-area:image;
+	display: flex;
+	justify-content: space-around;
 }
 
 .form{
@@ -173,4 +176,65 @@
 
 #back .link div{
 	background-color:rgb(255, 84, 84);
+}
+
+@media screen and (max-width: 1024px){
+	#action{
+		position:relative;
+		right:0px;
+		padding-top: 20px;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
+	#save{
+		justify-content: flex-start;
+		padding-right:10px;
+		padding-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	
+	#container{
+		grid-template-columns: 1fr;
+		grid-template-rows:1fr 1fr;
+		grid-template-areas: 
+		"image"
+		"form";
+	}
+
+	#action{
+		position:relative;
+		right:0px;
+		padding-top: 10px;
+		display:flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+	}
+
+	#form input{
+		text-align:center;
+		padding-left:0;
+	}
+
+	#save{
+		justify-content: flex-start;
+		padding-right:10px;
+		padding-bottom:10px;
+	}
+	
+	.button{
+		width: 150px;
+	}
+
+	#labelHolder {
+		width:100%;
+	}
+	
+	#customFileButton{
+		align-self: center;
+		width:100%;
+	}
 }

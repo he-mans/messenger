@@ -5,7 +5,7 @@ from django.core.validators import MinValueValidator
 # Create your models here.
 
 class Messages(models.Model):
-	related_contact = models.ForeignKey('Contacts', on_delete=models.PROTECT, related_name="messages")
+	related_contact = models.ForeignKey('Contacts', on_delete=models.CASCADE, related_name="messages")
 	message = models.TextField(null=False ,blank=False)
 	date_created=models.DateTimeField(auto_now = True)
 	read = models.BooleanField(default=False)
