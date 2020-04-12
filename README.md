@@ -25,5 +25,3 @@ manage your account
 look at others profile
 ![others profile](https://github.com/planetred-cc/messenger/blob/master/sample_images/scoutProfile.png)
 
-
-**still under development**
