@@ -1,68 +1,68 @@
-.join{
-	padding-top: 20px;
-	height: 80vh;
-	display: flex;
-	align-items: top;
+.join {
+  padding-top: 20px;
+  height: 80vh;
+  display: flex;
+  align-items: top;
 }
 
-a{
-	text-decoration: none;
-	color:black;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-#login{
-	grid-area: login;
-	justify-content: flex-end;
-	padding-right: 30px;
+#login {
+  grid-area: login;
+  justify-content: flex-end;
+  padding-right: 30px;
 }
 
-#signup{
-	grid-area: signup;
-	justify-content: flex-start;
-	padding-left: 30px;
+#signup {
+  grid-area: signup;
+  justify-content: flex-start;
+  padding-left: 30px;
 }
 
-.join div{
-	height: 52px;
-	width: 180px;
-	background-color: #ffffff;
-	cursor: pointer;
+.join div {
+  height: 52px;
+  width: 180px;
+  background-color: #ffffff;
+  cursor: pointer;
 
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: center;
-	align-item: center;
-	
-	border-radius: 7px 7px 7px 7px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 
-	transition: all .22s ease-in-out 0s;
-	-moz-transition: all .25s ease-in-out 0s;
+  border-radius: 7px 7px 7px 7px;
+
+  transition: all 0.22s ease-in-out 0s;
+  -moz-transition: all 0.25s ease-in-out 0s;
 }
 
-#content_login{
-	background-color: #ffffff;
+#content_login {
+  background-color: #ffffff;
 }
 
-#content_signup{
-	background-color: #668cff;
+#content_signup {
+  background-color: #668cff;
 }
 
-.join div:hover{
-	box-shadow: 0px 7px 60px #000000;
+.join div:hover {
+  box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.8);
 }
 
-.join h4{
-	text-align:center;
-	font-family: 'Yanone Kaffeesatz';
-	font-size: 15px;
-	letter-spacing:1px;
-	padding-bottom:3px;
-	padding-top: 3px;
+.join h4 {
+  text-align: center;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding-bottom: 3px;
+  padding-top: 3px;
 }
 
-.join p{
-	text-align:center;
-	font-family: 'Yanone Kaffeesatz';
-	font-size: 13px;
-	padding-top: 2px;
+.join p {
+  text-align: center;
+  font-family: 'Yanone Kaffeesatz';
+  font-size: 13px;
+  padding-top: 2px;
 }

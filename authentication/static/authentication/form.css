@@ -1,129 +1,131 @@
-#form{
-	height: 390px;
-	width: 440px;
-	display:flex;
-	flex-flow: column wrap;
-	justify-content: center;
-	align-items:center;
-	background-color: rgb(40, 40, 40);
-	border-radius: 7px;
-	box-shadow: 10px 10px 70px #000;
-	transition: all .15s ease-in-out 0s;
-	-moz-transition:all .15s ease-in-out 0s;;
+#form {
+  height: 390px;
+  width: 440px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(40, 40, 40);
+  border-radius: 7px;
+  box-shadow: 10px 10px 70px #000;
+  transition: all 0.15s ease-in-out 0s;
+  -moz-transition: all 0.15s ease-in-out 0s;
 }
 
-#form:hover{
-	height:405px;
-	width: 445px;
+#form:hover {
+  /* height: 405px;
+  width: 445px; */
 }
 
-#form input{
-	background-color: white;
-	color:black;
-	width:300px;
-	height:25px;
-	padding: 5px;
+#form input {
+  background-color: white;
+  color: black;
+  width: 300px;
+  height: 25px;
+  padding: 5px;
 
-	font-family:'Yanone Kaffeesatz', sans-serif;;
-	font-size: 16px;
-	letter-spacing: .3px;
-	border-radius: 6px 6px 6px 6px;
-	border-width: 1px;
-	border-color:black;
-	padding-left:7px;
-	margin-bottom:10px;	
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  border-radius: 6px 6px 6px 6px;
+  border-width: 1px;
+  border-color: black;
+  padding-left: 7px;
+  margin-bottom: 10px;
 }
 
-#form input[type=password]{
-	letter-spacing: .4px;
+#form input[type='password'] {
+  letter-spacing: 0.4px;
 }
-#form button{
-	height:35px;
-	width:312px;
-	padding: 5px;
-	padding-left:7px;
-	font-family:'Yanone Kaffeesatz', sans-serif;;
-	font-size: 16px;
-	letter-spacing: .4px;	
-	border-radius: 6px 6px 6px 6px;
-	border-width: 0px;
-	background-color: #668cff;
-	transition: all .2s ease-in-out 0s;
-	cursor:pointer;	
-	color:black;
-}
-
-#form button:hover{
-	background-color: #92b3e8;
+#form button {
+  height: 35px;
+  width: 312px;
+  padding: 5px;
+  padding-left: 7px;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  border-radius: 6px 6px 6px 6px;
+  border-width: 0px;
+  background-color: #668cff;
+  transition: all 0.2s ease-in-out 0s;
+  cursor: pointer;
+  color: black;
 }
 
-#greeting h2{
-	color:rgb(239, 239, 239);
-	font-family:'Yanone Kaffeesatz', sans-serif;
-	font-size: 40px;
-	padding-bottom: 10px;
-	letter-spacing: .6px;
+#form button:hover {
+  background-color: #92b3e8;
 }
 
-#greeting p{
-	color:rgb(206, 206, 206);
-	font-family:'Yanone Kaffeesatz', sans-serif;
-	font-size:20px;
-	padding-bottom:30px;
-	margin-left:14px;
+#greeting h2 {
+  color: rgb(239, 239, 239);
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 40px;
+  padding-bottom: 0px;
+  letter-spacing: 0.6px;
 }
 
-#form .errorlist{
-	position:absolute;
-	top:90px;
-	color: #721c24;
-    background-color:rgba(234, 58, 58,.95);
-	width:425px;
-	border-radius:7px;
-	color:rgb(20, 20, 20);
-	pointer-events:none;
-	font-family:'Yanone Kaffeesatz', sans-serif;
-	padding: 5px;
+#greeting p {
+  color: rgb(206, 206, 206);
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  padding-bottom: 30px;
 }
 
-#form .errorlist li{
-	list-style-type: none;
-	padding-top:3px;
-	padding-bottom:3px;
-	padding-left:5px;
-	padding-right:5px;
+#form .errorlist {
+  position: absolute;
+  top: 90px;
+  color: #721c24;
+  background-color: rgba(234, 58, 58, 0.95);
+  width: 425px;
+  border-radius: 7px;
+  color: rgb(20, 20, 20);
+  pointer-events: none;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  padding: 5px;
 }
 
-@media screen and (min-height: 1024px){
-	#form{
-		height: 480px;
-		width: 500px;
-	}
+#form .errorlist li {
+  list-style-type: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
-	#form:hover{
-		height:500px;
-		width: 520px;
-	}
+@media screen and (min-height: 1024px) {
+  #form {
+    height: 480px;
+    width: 500px;
+  }
 
-	#form input{
-		width:340px;
-		height:30px;
-		padding: 5px;
-		font-size: 17px;
-		letter-spacing: .3px;
-		border-width: 2px;
-	}
+  #form:hover {
+    height: 500px;
+    width: 520px;
+  }
 
-	#form button{
-		height:40px;
-		width:355px;
-	}
+  #form input {
+    width: 340px;
+    height: 30px;
+    padding: 5px;
+    font-size: 17px;
+    letter-spacing: 0.3px;
+    border-width: 2px;
+  }
 
-	#greeting h2{
-		font-size: 50px;
-	}
+  #form button {
+    height: 40px;
+    width: 355px;
+  }
 
-	#greeting p{
-		font-size: 30px;
-	}
+  #greeting h2 {
+    font-size: 50px;
+  }
+
+  #greeting p {
+    font-size: 30px;
+  }
 }

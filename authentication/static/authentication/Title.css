@@ -1,24 +1,24 @@
-#title{
-	grid-area: title;
-	flex-flow: column,wrap;
-	justify-content:center;
-	align-items: center;
-	padding-top: 70px;
-	height: 20vh;
+#title {
+  grid-area: title;
+  flex-flow: column, wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  height: 20vh;
 }
 
-#title h1{
-	text-align: center;
-	color:white;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-size: 60px;
-	
+#title h1 {
+  text-align: center;
+  color: white;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  margin-bottom: 0;
+  font-size: 60px;
 }
 
-#title p{
-	padding-top:10px;
-	text-align: center;
-	color: #5b5759;
-	font-family: 'Saira Extra Condensed', sans-serif;
-	font-size: 20px;
+#title p {
+  padding-top: 5px;
+  text-align: center;
+  color: #5b5759;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 20px;
 }

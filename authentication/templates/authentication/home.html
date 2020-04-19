@@ -14,26 +14,26 @@
 	
 {% block body %}
 	
-			<div id="title">
-				<h1>messenger</h1>
-				<p>An Interactive Chat Web App made using Django framework<p>
-			</div>
+	<div id="title">
+		<h1>messenger</h1>
+		<p>An Interactive Chat Web App made using Django framework<p>
+	</div>
 
 	<div class = "join" id="login">
-		<div id="content_login" onclick="expand_join_div('content_login')">
-			<a href="{% url 'auth-login' %}">
-			<h4>login</h4>
-			<p>your friends are waiting</p>
-			</a>
-		</div>
+		<a href="{% url 'auth-login' %}">
+			<div id="content_login" onclick="expand_join_div('content_login')">
+				<h4>login</h4>
+				{% comment %} <p>your friends are waiting</p> {% endcomment %}
+			</div>
+		</a>
 	</div>
 			
 	<div class = "join" id="signup">
-		<div id="content_signup" onclick="expand_join_div('content_signup')">
-			<a href="{% url 'auth-signup' %}">
-			<h4>signup</h4>
-			<p>and join your friends</p>
-			</a>
-		</div>
+		<a href="{% url 'auth-signup' %}">
+			<div id="content_signup" onclick="expand_join_div('content_signup')">
+				<h4>signup</h4>
+				{% comment %} <p>and join your friends</p> {% endcomment %}
+			</div>
+		</a>
 	</div>
 {% endblock body %}
